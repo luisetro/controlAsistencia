@@ -40,7 +40,7 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Cédula','name'=>'ci','type'=>'text','validation'=>'required|min:10|max:10','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Cédula','name'=>'ci','type'=>'text','validation'=>'required|min:10|max:10|unique:empleado','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nombres y Apellidos','name'=>'nombres','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Fecha Nacimiento','name'=>'fecha_nacimiento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Genero','name'=>'genero','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -51,7 +51,7 @@
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Cédula','name'=>'ci','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Cédula','name'=>'ci','type'=>'text','validation'=>'required|min:10|max:10|unique:ci','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Nombres y Apellidos','name'=>'nombres','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Fecha Nacimiento','name'=>'fecha_nacimiento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Genero','name'=>'genero','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
