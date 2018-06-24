@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use Carbon\Carbon;
 
 	class AdminAsistenciaController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -31,22 +32,26 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Empleado","name"=>"empleado_id","join"=>"empleado,nombres"];
-			$this->col[] = ["label"=>"H Inicio","name"=>"h_inicio"];
-			$this->col[] = ["label"=>"H Fin","name"=>"h_fin"];
+			$this->col[] = ["label"=>"Hora de Entrada","name"=>"h_inicio"];
+			$this->col[] = ["label"=>"Hora de Salida","name"=>"h_fin"];
+			$this->col[] = ["label"=>"Tipo","name"=>"tipo"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres'];
-			$this->form[] = ['label'=>'H Inicio','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10','value'=>new \DateTime()];
-			$this->form[] = ['label'=>'H Fin','name'=>'h_fin','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora de Entrada','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10','value'=>Carbon::now()];
+			//$this->form[] = ['label'=>'Hora de Entrada','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10','value'=>Carbon::now()];
+			$this->form[] = ['label'=>'Hora de Salida','name'=>'h_fin','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tipo','name'=>'tipo','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'HORARIO NORMAL;HORAS EXTRA'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres','datatable_format'=>'nombres,\' \',apellidos'];
+			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres'];
 			//$this->form[] = ['label'=>'H Inicio','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'H Fin','name'=>'h_fin','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tipo','name'=>'tipo','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'HORARIO NORMAL;HORAS EXTRA'];
 			# OLD END FORM
 
 			/* 
