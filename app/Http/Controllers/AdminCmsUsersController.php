@@ -50,4 +50,16 @@ class AdminCmsUsersController extends \crocodicstudio\crudbooster\controllers\CB
 		$data['row']        = CRUDBooster::first('cms_users',CRUDBooster::myId());		
 		$this->cbView('crudbooster::default.form',$data);				
 	}
+
+    public function hook_query_index(&$query)
+    {
+
+        //Los id=1  y id=2 pertenencen al superadmin y al distribuidor principal respectivamente.
+
+        $idUser = CRUDBooster::myId();
+        if ($idUser == 2 || $idUser == 3) {
+            $query->where('cms_users.id', '<>', 1);
+
+        }
+    }
 }
