@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin/control-asistencia','AdminAsistenciaController@getControlAsistencia');
+Route::get('admin/empleados','AdminAsistenciaController@empleados');
+Route::post('admin/marcarEntrada','AdminAsistenciaController@marcarEntrada');
