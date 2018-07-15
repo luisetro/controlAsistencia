@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-	use Session;
+	use App\Configuracion;
+    use Session;
 	use Request;
 	use DB;
 	use CRUDBooster;
@@ -146,7 +147,20 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
+	        $url = $_SERVER['REQUEST_URI'];
+	        if(strpos($url,'/edit/')){
+                $this->script_js = "$(function(){
+                 $('#form').on('submit',function(e){
+                    var hora_entrada = $('#hora_entrada').val();
+                    var hora_salida = $('#hora_salida').val();
+                    if(hora_entrada >= hora_salida){
+                        swal('LA HORA DE ENTRADA NO PUEDE SER MAYOR O IGUAL A LA HORA DE SALIDA');
+                        e.preventDefault();
+                    }
+                 });
+                });";
+            }
+
 
 
             /*
@@ -281,7 +295,6 @@
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
 	        //Your code here
-
 	    }
 
 	    /* 
