@@ -9,6 +9,15 @@
 <div class='panel panel-default'>
     <div class='panel-body'>
         <div class="container">
+            <div class="row" >
+                <div class="col-md-3 bg-success">
+                    <h4><b>Hora de Entrada:</b> {{$elem->hora_entrada}}</h4>
+                </div>
+                <div class="col-md-3 bg-success">
+                    <h4><b>Hora de Salida:</b> {{$elem->hora_salida}}</h4>
+                </div>
+            </div>
+            <br>
             <div class="row">
                 @if(Carbon\Carbon::now()->format("Y-m-d") == $_GET['fecha'])
                 <div class="col-md-2">

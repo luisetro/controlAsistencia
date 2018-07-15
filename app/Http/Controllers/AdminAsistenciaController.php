@@ -388,7 +388,7 @@
         public function empleados(Request $request){
             $empleado = DB::table('asistencia')
                 ->join('empleado','asistencia.empleado_id','=','empleado.id')
-                ->select('asistencia.id','nombres','h_inicio','h_fin')
+                ->select('asistencia.id','nombres','h_inicio','h_fin','n_horas_extra')
                 ->where('fecha','=',$request->get('fecha'))
                 ->get();
             return response()->json($empleado);
@@ -419,8 +419,7 @@
 
                 if(count($asistencia->h_fin) == 0){
                     if($horaActual > $horaSalida){
-                        echo $horaActual - $horaSalida;
-                        abort(500);
+                        $asistencia->n_horas_extra = $horaActual - $horaSalida;
                     }
                     $asistencia->h_fin = $horaActual;
                     $asistencia->save();
