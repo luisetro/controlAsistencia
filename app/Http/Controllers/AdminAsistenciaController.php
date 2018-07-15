@@ -426,6 +426,11 @@
                         $asistencia->n_horas_extra = $horaActual - $horaSalida;
                     }
                     $asistencia->h_fin = $horaActual;
+
+                    $fechaEntrada = Carbon::createFromFormat('Y-m-d H:i:s',$asistencia->fecha." ".$asistencia->h_inicio);
+                    $fechaSalida = Carbon::createFromFormat('Y-m-d H:i:s',$asistencia->fecha." ".$asistencia->h_fin);
+
+                    $asistencia->n_horas_laboradas = $fechaEntrada->diffInHours($fechaSalida);
                     $asistencia->save();
                 }
 
