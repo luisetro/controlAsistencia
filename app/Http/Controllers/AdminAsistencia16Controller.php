@@ -39,11 +39,11 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'time','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,id'];
 			$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -52,7 +52,7 @@
 			//$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,id'];
 			//$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
