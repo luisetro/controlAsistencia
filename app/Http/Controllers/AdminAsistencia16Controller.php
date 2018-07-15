@@ -39,20 +39,20 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'time','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,id'];
+			$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'time','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'time','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres'];
 			$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'time','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'time','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,id'];
 			//$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'min:0','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
@@ -152,7 +152,20 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
+            $url = $_SERVER['REQUEST_URI'];
+            if(strpos($url,'/edit/') || strpos($url,'/add')){
+                $this->script_js = "$(function(){
+                 $('#h_fin').val(null);
+                 $('#form').on('submit',function(e){
+                    var hora_entrada = $('#h_inicio').val();
+                    var hora_salida = $('#h_fin').val();
+                    if(hora_entrada >= hora_salida){
+                        swal('LA HORA DE ENTRADA NO PUEDE SER MAYOR O IGUAL A LA HORA DE SALIDA');
+                        e.preventDefault();
+                    }
+                 });
+                });";
+            }
 
 
             /*
