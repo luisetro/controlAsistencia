@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-07-15 13:46:50
+Date: 2018-07-15 15:02:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,50 +27,23 @@ CREATE TABLE `asistencia` (
   `fecha` date DEFAULT NULL,
   `n_horas_extra` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of asistencia
 -- ----------------------------
-INSERT INTO `asistencia` VALUES ('1', '08:00:00', '16:00:00', '1', '2018-06-24', '0');
-INSERT INTO `asistencia` VALUES ('3', '16:00:00', '20:00:00', '3', '2018-06-24', '0');
-INSERT INTO `asistencia` VALUES ('4', '08:00:00', '16:00:00', '2', '2018-06-24', '0');
-INSERT INTO `asistencia` VALUES ('6', '11:36:46', null, '1', '2018-07-08', null);
-INSERT INTO `asistencia` VALUES ('7', '11:36:46', null, '2', '2018-07-08', null);
-INSERT INTO `asistencia` VALUES ('8', '11:36:46', null, '3', '2018-07-08', null);
-INSERT INTO `asistencia` VALUES ('9', '11:36:46', null, '4', '2018-07-08', null);
-INSERT INTO `asistencia` VALUES ('10', '10:40:03', null, '1', '2018-07-07', null);
-INSERT INTO `asistencia` VALUES ('11', '10:40:03', null, '2', '2018-07-07', null);
-INSERT INTO `asistencia` VALUES ('12', '10:39:55', null, '3', '2018-07-07', null);
-INSERT INTO `asistencia` VALUES ('13', '10:39:55', null, '4', '2018-07-07', null);
-INSERT INTO `asistencia` VALUES ('14', null, null, '1', '2018-07-02', null);
-INSERT INTO `asistencia` VALUES ('15', '10:45:33', null, '2', '2018-07-02', null);
-INSERT INTO `asistencia` VALUES ('16', '10:45:33', null, '3', '2018-07-02', null);
-INSERT INTO `asistencia` VALUES ('17', '10:45:23', null, '4', '2018-07-02', null);
-INSERT INTO `asistencia` VALUES ('18', null, null, '1', '2018-07-06', null);
-INSERT INTO `asistencia` VALUES ('19', null, null, '2', '2018-07-06', null);
-INSERT INTO `asistencia` VALUES ('20', null, null, '3', '2018-07-06', null);
-INSERT INTO `asistencia` VALUES ('21', null, null, '4', '2018-07-06', null);
-INSERT INTO `asistencia` VALUES ('22', null, null, '1', '2018-06-06', null);
-INSERT INTO `asistencia` VALUES ('23', null, null, '2', '2018-06-06', null);
-INSERT INTO `asistencia` VALUES ('24', null, null, '3', '2018-06-06', null);
-INSERT INTO `asistencia` VALUES ('25', null, null, '4', '2018-06-06', null);
-INSERT INTO `asistencia` VALUES ('26', '10:59:47', null, '1', '2018-04-06', null);
-INSERT INTO `asistencia` VALUES ('27', '10:59:47', null, '2', '2018-04-06', null);
-INSERT INTO `asistencia` VALUES ('28', null, null, '3', '2018-04-06', null);
-INSERT INTO `asistencia` VALUES ('29', null, null, '4', '2018-04-06', null);
-INSERT INTO `asistencia` VALUES ('30', null, null, '1', '2018-06-27', null);
-INSERT INTO `asistencia` VALUES ('31', null, null, '2', '2018-06-27', null);
-INSERT INTO `asistencia` VALUES ('32', null, null, '3', '2018-06-27', null);
-INSERT INTO `asistencia` VALUES ('33', null, null, '4', '2018-06-27', null);
-INSERT INTO `asistencia` VALUES ('34', null, null, '1', '2018-07-31', null);
-INSERT INTO `asistencia` VALUES ('35', null, null, '2', '2018-07-31', null);
-INSERT INTO `asistencia` VALUES ('36', null, null, '3', '2018-07-31', null);
-INSERT INTO `asistencia` VALUES ('37', null, null, '4', '2018-07-31', null);
-INSERT INTO `asistencia` VALUES ('38', null, null, '1', '2018-07-15', null);
-INSERT INTO `asistencia` VALUES ('39', null, null, '2', '2018-07-15', null);
-INSERT INTO `asistencia` VALUES ('40', null, null, '3', '2018-07-15', null);
-INSERT INTO `asistencia` VALUES ('41', null, null, '4', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('1', '14:13:59', '14:14:11', '1', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('2', null, '14:19:16', '2', '2018-07-15', '2');
+INSERT INTO `asistencia` VALUES ('3', null, '14:21:12', '3', '2018-07-15', '2');
+INSERT INTO `asistencia` VALUES ('4', null, null, '4', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('5', null, null, '1', '2018-07-16', null);
+INSERT INTO `asistencia` VALUES ('6', null, null, '2', '2018-07-16', null);
+INSERT INTO `asistencia` VALUES ('7', null, null, '3', '2018-07-16', null);
+INSERT INTO `asistencia` VALUES ('8', null, null, '4', '2018-07-16', null);
+INSERT INTO `asistencia` VALUES ('9', null, null, '1', '2018-08-10', null);
+INSERT INTO `asistencia` VALUES ('10', null, null, '2', '2018-08-10', null);
+INSERT INTO `asistencia` VALUES ('11', null, null, '3', '2018-08-10', null);
+INSERT INTO `asistencia` VALUES ('12', null, null, '4', '2018-08-10', null);
 
 -- ----------------------------
 -- Table structure for cms_apicustom
@@ -199,7 +172,7 @@ CREATE TABLE `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_logs
@@ -249,6 +222,18 @@ INSERT INTO `cms_logs` VALUES ('42', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64
 INSERT INTO `cms_logs` VALUES ('43', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de letr-leo@hotmail.es desde la Dirección IP ::1', '', '1', '2018-07-10 15:59:47', null);
 INSERT INTO `cms_logs` VALUES ('44', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/logout', 'letr-leo@hotmail.es se desconectó', '', '1', '2018-07-10 16:00:08', null);
 INSERT INTO `cms_logs` VALUES ('45', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de letr-leo@hotmail.es desde la Dirección IP ::1', '', '1', '2018-07-15 11:35:34', null);
+INSERT INTO `cms_logs` VALUES ('46', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de letr-leo@hotmail.es desde la Dirección IP ::1', '', '1', '2018-07-15 14:17:46', null);
+INSERT INTO `cms_logs` VALUES ('47', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_salida</td><td>17:00:00</td><td>12:00:00</td></tr></tbody></table>', '1', '2018-07-15 14:18:57', null);
+INSERT INTO `cms_logs` VALUES ('48', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_entrada</td><td>08:00:00</td><td>15:00:00</td></tr></tbody></table>', '1', '2018-07-15 14:20:49', null);
+INSERT INTO `cms_logs` VALUES ('49', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_entrada</td><td>15:00:00</td><td>08:00:00</td></tr></tbody></table>', '1', '2018-07-15 14:24:04', null);
+INSERT INTO `cms_logs` VALUES ('50', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_salida</td><td>12:00:00</td><td>17:00:00</td></tr></tbody></table>', '1', '2018-07-15 14:24:20', null);
+INSERT INTO `cms_logs` VALUES ('51', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody></tbody></table>', '1', '2018-07-15 14:39:01', null);
+INSERT INTO `cms_logs` VALUES ('52', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/menu_management/add-save', 'Añadir nueva información Reportes en Menu Management', '', '1', '2018-07-15 14:50:37', null);
+INSERT INTO `cms_logs` VALUES ('53', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de marioam@outlook.com desde la Dirección IP ::1', '', '2', '2018-07-15 14:52:41', null);
+INSERT INTO `cms_logs` VALUES ('54', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/menu_management/edit-save/6', 'Actualizar información Reportes en Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>type</td><td>Controller & Method</td><td>Route</td></tr><tr><td>path</td><td>ReporteController@index</td><td>reportes</td></tr><tr><td>sorting</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 14:55:49', null);
+INSERT INTO `cms_logs` VALUES ('55', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/logout', 'marioam@outlook.com se desconectó', '', '2', '2018-07-15 14:56:05', null);
+INSERT INTO `cms_logs` VALUES ('56', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de marioam@outlook.com desde la Dirección IP ::1', '', '2', '2018-07-15 14:56:24', null);
+INSERT INTO `cms_logs` VALUES ('57', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/menu_management/edit-save/6', 'Actualizar información Reportes en Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>type</td><td>Route</td><td>URL</td></tr><tr><td>path</td><td>reportes</td><td>admin/reportes</td></tr><tr><td>sorting</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 14:57:32', null);
 
 -- ----------------------------
 -- Table structure for cms_menus
@@ -269,7 +254,7 @@ CREATE TABLE `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_menus
@@ -278,6 +263,7 @@ INSERT INTO `cms_menus` VALUES ('1', 'EMPLEADOS', 'Route', 'AdminEmpleadoControl
 INSERT INTO `cms_menus` VALUES ('2', 'REGISTRO DE ASISTENCIA', 'Route', 'AdminAsistenciaControllerGetIndex', 'normal', 'fa fa-th', '0', '1', '0', '1', '2', '2018-06-24 19:04:29', '2018-06-24 19:45:07');
 INSERT INTO `cms_menus` VALUES ('4', 'Configuración', 'Route', 'AdminConfiguracion15ControllerGetIndex', null, 'fa fa-cog', '0', '1', '0', '1', '3', '2018-07-08 11:11:45', null);
 INSERT INTO `cms_menus` VALUES ('5', 'Administración de asistencia', 'Route', 'AdminAsistencia16ControllerGetIndex', null, 'fa fa-glass', '0', '1', '0', '1', '4', '2018-07-15 12:25:20', null);
+INSERT INTO `cms_menus` VALUES ('6', 'Reportes', 'URL', 'admin/reportes', 'normal', 'fa fa-list-alt', '0', '1', '0', '1', null, '2018-07-15 14:50:36', '2018-07-15 14:57:31');
 
 -- ----------------------------
 -- Table structure for cms_menus_privileges
@@ -288,7 +274,7 @@ CREATE TABLE `cms_menus_privileges` (
   `id_cms_menus` int(11) DEFAULT NULL,
   `id_cms_privileges` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_menus_privileges
@@ -300,6 +286,7 @@ INSERT INTO `cms_menus_privileges` VALUES ('6', '2', '1');
 INSERT INTO `cms_menus_privileges` VALUES ('7', '3', '1');
 INSERT INTO `cms_menus_privileges` VALUES ('8', '4', '1');
 INSERT INTO `cms_menus_privileges` VALUES ('9', '5', '1');
+INSERT INTO `cms_menus_privileges` VALUES ('10', '6', '2');
 
 -- ----------------------------
 -- Table structure for cms_moduls
