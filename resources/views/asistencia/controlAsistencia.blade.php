@@ -11,9 +11,6 @@
                     <button type="button" class="btn btn-warning">Marcar Hora Salida</button>
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-danger">Registrar Horas Extra</button>
-                </div>
-                <div class="col-md-2">
                     <img src="{{asset('images/reloj.png')}}" alt="" width="100px" height="100px">
                 </div>
                 <div class="col-md-3">
@@ -45,7 +42,8 @@
             resizable:true,
             columns:[
                 {
-                  selectable:true
+                  selectable:true,
+                    width:"40px"
                 },
                 {
                     field:'nombres',
@@ -58,6 +56,10 @@
                 {
                     field:'h_fin',
                     title:'HORA SALIDA'
+                },
+                {
+                    field:'n_horas_extra',
+                    title:'N° HORAS EXTRA'
                 }
             ]
         });
