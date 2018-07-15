@@ -30,7 +30,9 @@ class ReporteController extends Controller
     {
         $desde = $request->get('fecha_desde');
         $hasta = $request->get('fecha_hasta');
-        $empleado = Empleado::with('asistencias')->get();
+        $empleado = Empleado::with(['asistencias'=>function($query) use ($desde,$hasta){
+            $query->whereBetween('fecha',array($desde,$hasta))->get();
+        }])->get();
 
         foreach($empleado as $emp){
             $sumaHE = 0;

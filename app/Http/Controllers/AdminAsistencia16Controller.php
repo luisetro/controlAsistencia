@@ -35,6 +35,7 @@
 			$this->col[] = ["label"=>"hora de Inicio","name"=>"h_inicio"];
 			$this->col[] = ["label"=>"hora de salida","name"=>"h_fin"];
 			$this->col[] = ["label"=>"N Horas Extras","name"=>"n_horas_extra"];
+			$this->col[] = ["label"=>"N Horas_laboradas","name"=>"n_horas_laboradas"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -44,13 +45,14 @@
 			$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres'];
 			$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'N Horas_laboradas','name'=>'n_horas_laboradas','type'=>'number','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'hora de inicio','name'=>'h_inicio','type'=>'time','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'hora de salida','name'=>'h_fin','type'=>'time','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,id'];
+			//$this->form[] = ['label'=>'Empleado','name'=>'empleado_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'empleado,nombres'];
 			//$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'N Horas Extras','name'=>'n_horas_extra','type'=>'number','validation'=>'min:0','width'=>'col-sm-10'];
 			# OLD END FORM
