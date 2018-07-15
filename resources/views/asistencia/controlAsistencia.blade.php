@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-3">
                     <h2>{{$fecha}}</h2>
-                    <h2>{{\Carbon\Carbon::now()->format('h:i:s A')}}</h2>
+                    <h2>{{$horaActual}}</h2>
                 </div>
             </div>
             <div class="row">

@@ -399,7 +399,7 @@
 
             foreach($items as $i){
                 $asistencia = Asistencias::find($i->id);
-                if(count($asistencia->h_inicio) == 0){
+                if($asistencia->h_inicio == NULL){
                     $asistencia->h_inicio = Carbon::now()->format('H:i:s');
                     $asistencia->save();
                 }
@@ -417,7 +417,7 @@
             foreach($items as $i){
                 $asistencia = Asistencias::find($i->id);
 
-                if(count($asistencia->h_fin) == 0){
+                if($asistencia->h_fin == NULL){
                     if($horaActual > $horaSalida){
                         $asistencia->n_horas_extra = $horaActual - $horaSalida;
                     }
