@@ -171,7 +171,11 @@
                        window.location.href = 'control-asistencia?fecha='+$(this).attr('data-date');
                     });
                  });
-                 
+                 $('.fc-next-button').click(function(){
+                    $('.fc-day').bind('click',function(){
+                       window.location.href = 'control-asistencia?fecha='+$(this).attr('data-date');
+                    });
+                 });                
                  
                  
               });// fin function
