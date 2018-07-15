@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : local
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : asistencias
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-07-15 12:03:36
+Date: 2018-07-15 13:46:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,7 +27,7 @@ CREATE TABLE `asistencia` (
   `fecha` date DEFAULT NULL,
   `n_horas_extra` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of asistencia
@@ -67,6 +67,10 @@ INSERT INTO `asistencia` VALUES ('34', null, null, '1', '2018-07-31', null);
 INSERT INTO `asistencia` VALUES ('35', null, null, '2', '2018-07-31', null);
 INSERT INTO `asistencia` VALUES ('36', null, null, '3', '2018-07-31', null);
 INSERT INTO `asistencia` VALUES ('37', null, null, '4', '2018-07-31', null);
+INSERT INTO `asistencia` VALUES ('38', null, null, '1', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('39', null, null, '2', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('40', null, null, '3', '2018-07-15', null);
+INSERT INTO `asistencia` VALUES ('41', null, null, '4', '2018-07-15', null);
 
 -- ----------------------------
 -- Table structure for cms_apicustom
@@ -265,7 +269,7 @@ CREATE TABLE `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_menus
@@ -273,6 +277,7 @@ CREATE TABLE `cms_menus` (
 INSERT INTO `cms_menus` VALUES ('1', 'EMPLEADOS', 'Route', 'AdminEmpleadoControllerGetIndex', 'normal', 'fa fa-star', '0', '1', '0', '1', '1', '2018-06-24 18:42:03', '2018-06-24 19:44:48');
 INSERT INTO `cms_menus` VALUES ('2', 'REGISTRO DE ASISTENCIA', 'Route', 'AdminAsistenciaControllerGetIndex', 'normal', 'fa fa-th', '0', '1', '0', '1', '2', '2018-06-24 19:04:29', '2018-06-24 19:45:07');
 INSERT INTO `cms_menus` VALUES ('4', 'Configuración', 'Route', 'AdminConfiguracion15ControllerGetIndex', null, 'fa fa-cog', '0', '1', '0', '1', '3', '2018-07-08 11:11:45', null);
+INSERT INTO `cms_menus` VALUES ('5', 'Administración de asistencia', 'Route', 'AdminAsistencia16ControllerGetIndex', null, 'fa fa-glass', '0', '1', '0', '1', '4', '2018-07-15 12:25:20', null);
 
 -- ----------------------------
 -- Table structure for cms_menus_privileges
@@ -283,7 +288,7 @@ CREATE TABLE `cms_menus_privileges` (
   `id_cms_menus` int(11) DEFAULT NULL,
   `id_cms_privileges` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_menus_privileges
@@ -294,6 +299,7 @@ INSERT INTO `cms_menus_privileges` VALUES ('5', '2', '2');
 INSERT INTO `cms_menus_privileges` VALUES ('6', '2', '1');
 INSERT INTO `cms_menus_privileges` VALUES ('7', '3', '1');
 INSERT INTO `cms_menus_privileges` VALUES ('8', '4', '1');
+INSERT INTO `cms_menus_privileges` VALUES ('9', '5', '1');
 
 -- ----------------------------
 -- Table structure for cms_moduls
@@ -312,7 +318,7 @@ CREATE TABLE `cms_moduls` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_moduls
@@ -332,6 +338,7 @@ INSERT INTO `cms_moduls` VALUES ('12', 'EMPLEADOS', 'fa fa-star', 'empleado', 'e
 INSERT INTO `cms_moduls` VALUES ('13', 'REGISTRO DE ASISTENCIA', 'fa fa-th', 'asistencia', 'asistencia', 'AdminAsistenciaController', '0', '0', '2018-06-24 19:04:29', null, null);
 INSERT INTO `cms_moduls` VALUES ('14', 'Configuración', 'fa fa-cog', 'configuracion', 'configuracion', 'AdminConfiguracionController', '0', '0', '2018-07-08 11:08:29', null, '2018-07-08 11:11:15');
 INSERT INTO `cms_moduls` VALUES ('15', 'Configuración', 'fa fa-cog', 'configuracion15', 'configuracion', 'AdminConfiguracion15Controller', '0', '0', '2018-07-08 11:11:45', null, null);
+INSERT INTO `cms_moduls` VALUES ('16', 'Administración de asistencia', 'fa fa-glass', 'asistencia16', 'asistencia', 'AdminAsistencia16Controller', '0', '0', '2018-07-15 12:25:20', null, null);
 
 -- ----------------------------
 -- Table structure for cms_notifications
@@ -388,7 +395,7 @@ CREATE TABLE `cms_privileges_roles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_privileges_roles
@@ -410,6 +417,7 @@ INSERT INTO `cms_privileges_roles` VALUES ('14', '1', '1', '1', '1', '1', '2', '
 INSERT INTO `cms_privileges_roles` VALUES ('15', '1', '1', '1', '1', '1', '2', '13', null, null);
 INSERT INTO `cms_privileges_roles` VALUES ('16', '1', '1', '1', '1', '1', '1', '14', null, null);
 INSERT INTO `cms_privileges_roles` VALUES ('17', '1', '1', '1', '1', '1', '1', '15', null, null);
+INSERT INTO `cms_privileges_roles` VALUES ('18', '1', '1', '1', '1', '1', '1', '16', null, null);
 
 -- ----------------------------
 -- Table structure for cms_settings
