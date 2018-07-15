@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
+Source Server         : localhost
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : asistencias
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-07-15 15:02:48
+Date: 2018-07-15 17:59:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,24 +26,20 @@ CREATE TABLE `asistencia` (
   `empleado_id` int(11) NOT NULL,
   `fecha` date DEFAULT NULL,
   `n_horas_extra` int(11) DEFAULT NULL,
+  `n_horas_laboradas` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of asistencia
 -- ----------------------------
-INSERT INTO `asistencia` VALUES ('1', '14:13:59', '14:14:11', '1', '2018-07-15', null);
-INSERT INTO `asistencia` VALUES ('2', null, '14:19:16', '2', '2018-07-15', '2');
-INSERT INTO `asistencia` VALUES ('3', null, '14:21:12', '3', '2018-07-15', '2');
-INSERT INTO `asistencia` VALUES ('4', null, null, '4', '2018-07-15', null);
-INSERT INTO `asistencia` VALUES ('5', null, null, '1', '2018-07-16', null);
-INSERT INTO `asistencia` VALUES ('6', null, null, '2', '2018-07-16', null);
-INSERT INTO `asistencia` VALUES ('7', null, null, '3', '2018-07-16', null);
-INSERT INTO `asistencia` VALUES ('8', null, null, '4', '2018-07-16', null);
-INSERT INTO `asistencia` VALUES ('9', null, null, '1', '2018-08-10', null);
-INSERT INTO `asistencia` VALUES ('10', null, null, '2', '2018-08-10', null);
-INSERT INTO `asistencia` VALUES ('11', null, null, '3', '2018-08-10', null);
-INSERT INTO `asistencia` VALUES ('12', null, null, '4', '2018-08-10', null);
+INSERT INTO `asistencia` VALUES ('1', null, null, '1', '2018-07-15', null, null);
+INSERT INTO `asistencia` VALUES ('2', null, null, '2', '2018-07-15', null, null);
+INSERT INTO `asistencia` VALUES ('3', null, null, '3', '2018-07-15', null, null);
+INSERT INTO `asistencia` VALUES ('4', '08:00:00', '17:51:45', '4', '2018-07-15', '0', '9');
+INSERT INTO `asistencia` VALUES ('5', null, null, '1', '2018-07-22', null, null);
+INSERT INTO `asistencia` VALUES ('6', null, null, '2', '2018-07-22', null, null);
+INSERT INTO `asistencia` VALUES ('7', null, null, '3', '2018-07-22', null, null);
 
 -- ----------------------------
 -- Table structure for cms_apicustom
@@ -172,7 +168,7 @@ CREATE TABLE `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of cms_logs
@@ -234,6 +230,17 @@ INSERT INTO `cms_logs` VALUES ('54', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64
 INSERT INTO `cms_logs` VALUES ('55', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/logout', 'marioam@outlook.com se desconectó', '', '2', '2018-07-15 14:56:05', null);
 INSERT INTO `cms_logs` VALUES ('56', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de marioam@outlook.com desde la Dirección IP ::1', '', '2', '2018-07-15 14:56:24', null);
 INSERT INTO `cms_logs` VALUES ('57', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/menu_management/edit-save/6', 'Actualizar información Reportes en Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>type</td><td>Route</td><td>URL</td></tr><tr><td>path</td><td>reportes</td><td>admin/reportes</td></tr><tr><td>sorting</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 14:57:32', null);
+INSERT INTO `cms_logs` VALUES ('58', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de marioam@outlook.com desde la Dirección IP ::1', '', '2', '2018-07-15 15:04:12', null);
+INSERT INTO `cms_logs` VALUES ('59', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/login', 'Ingreso de marioam@outlook.com desde la Dirección IP ::1', '', '2', '2018-07-15 17:17:17', null);
+INSERT INTO `cms_logs` VALUES ('60', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_salida</td><td>17:00:00</td><td>19:00:00</td></tr></tbody></table>', '1', '2018-07-15 17:37:48', null);
+INSERT INTO `cms_logs` VALUES ('61', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_salida</td><td>19:00:00</td><td>22:00:00</td></tr></tbody></table>', '1', '2018-07-15 17:40:32', null);
+INSERT INTO `cms_logs` VALUES ('62', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/edit-save/4', 'Actualizar información  en Administración de asistencia', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>h_inicio</td><td>17:40:49</td><td>08:00:00</td></tr><tr><td>h_fin</td><td></td><td>17:30:00</td></tr><tr><td>n_horas_extra</td><td></td><td></td></tr><tr><td>n_horas_laboradas</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 17:44:25', null);
+INSERT INTO `cms_logs` VALUES ('63', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/configuracion15/edit-save/1', 'Actualizar información  en Configuración', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>hora_salida</td><td>22:00:00</td><td>17:00:00</td></tr></tbody></table>', '1', '2018-07-15 17:46:05', null);
+INSERT INTO `cms_logs` VALUES ('64', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/edit-save/4', 'Actualizar información  en Administración de asistencia', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>h_inicio</td><td></td><td>17:45:15</td></tr><tr><td>h_fin</td><td></td><td></td></tr><tr><td>n_horas_extra</td><td></td><td></td></tr><tr><td>n_horas_laboradas</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 17:50:28', null);
+INSERT INTO `cms_logs` VALUES ('65', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/edit-save/4', 'Actualizar información  en Administración de asistencia', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>h_inicio</td><td>17:45:15</td><td>08:00:00</td></tr><tr><td>h_fin</td><td></td><td></td></tr><tr><td>n_horas_extra</td><td></td><td></td></tr><tr><td>n_horas_laboradas</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 17:51:16', null);
+INSERT INTO `cms_logs` VALUES ('66', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/edit-save/8', 'Actualizar información  en Administración de asistencia', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>h_inicio</td><td></td><td>17:45:15</td></tr><tr><td>h_fin</td><td></td><td>10:45:15</td></tr><tr><td>n_horas_extra</td><td></td><td></td></tr><tr><td>n_horas_laboradas</td><td></td><td></td></tr></tbody></table>', '1', '2018-07-15 17:54:54', null);
+INSERT INTO `cms_logs` VALUES ('67', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/delete/8', 'Eliminar información 8 en Administración de asistencia', '', '1', '2018-07-15 17:55:05', null);
+INSERT INTO `cms_logs` VALUES ('68', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://localhost/controlAsistencia/public/admin/asistencia16/delete/8', 'Eliminar información  en Administración de asistencia', '', '1', '2018-07-15 17:55:07', null);
 
 -- ----------------------------
 -- Table structure for cms_menus
