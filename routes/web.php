@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('admin/control-asistencia','AdminAsistenciaController@getControlAsistencia');
 Route::get('admin/empleados','AdminAsistenciaController@empleados');
 Route::post('admin/marcarEntrada','AdminAsistenciaController@marcarEntrada');
+Route::post('admin/marcarSalida','AdminAsistenciaController@marcarSalida');

@@ -1,16 +1,24 @@
 @extends('crudbooster::admin_template')
 @section('content')
+    @php
+        $elem = \App\Configuracion::first();
+        $horaSalida = $elem->hora_salida;
+        $horaActual = Carbon\Carbon::now()->format("H:i:s");
+
+    @endphp
 <div class='panel panel-default'>
     <div class='panel-body'>
         <div class="container">
             <div class="row">
+                @if(Carbon\Carbon::now()->format("Y-m-d") == $_GET['fecha'])
                 <div class="col-md-2">
-                    <button id="btn_marcarhe" type="button" class="btn btn-info">Marcar Hora Entrada</button>
+                    @if($horaActual < $horaSalida)<button id="btn_marcarhe" type="button" class="btn btn-info">Marcar Hora Entrada</button>@endif
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-warning">Marcar Hora Salida</button>
+                    <button id="btn_marcarhs" type="button" class="btn btn-warning">Marcar Hora Salida</button>
                 </div>
-                <div class="col-md-2">
+                @endif
+                <div class="@if(Carbon\Carbon::now()->format("Y-m-d") != $_GET['fecha']) col-md-offset-4 @endif col-md-2">
                     <img src="{{asset('images/reloj.png')}}" alt="" width="100px" height="100px">
                 </div>
                 <div class="col-md-3">
@@ -63,7 +71,9 @@
                 }
             ]
         });
-
+        /**
+         * MARCAR HORA DE ENTRADA
+        * */
         $("#btn_marcarhe").click(function () {
             //1. tomar todos los campos de la tabla
             //2. crear un objeto formdata con todos los objetos
@@ -108,8 +118,56 @@
             }else{
                 swal("SELECCIONE UN DATO");
             }
+        });
 
-        })
+        /**
+         * MARCAR HORA DE SALIDA
+         * */
+        $("#btn_marcarhs").click(function () {
+            //1. tomar todos los campos de la tabla
+            //2. crear un objeto formdata con todos los objetos
+            //3. Crear una función ajax para el envio
+            //4. crear la funcion php que recibe el array
+            //5. guardar en la base de datos iterando los ids
+
+            var formdata = new FormData();
+            var tabla = $("#tablaEmpleados").data("kendoGrid");
+            var items = tabla.select();
+            var itemsArr = [];
+            items.each(function (k,v) {
+                itemsArr.push(tabla.dataItem(v));
+            });
+
+            if(itemsArr.length > 0){
+                swal({
+                    title:"Alerta",
+                    text: "DESEA REGISTRAR LA HORA DE SALIDA DE LOS EMPLEADOS SELECCIONADOS?",
+                    confirmButtonText: 'SI, Registrar!',
+                    cancelButtonText: 'NO, CANCELAR!',
+                    showCancelButton: true
+                },function (confirm) {
+                    if(confirm){
+                        formdata.append("items",JSON.stringify(itemsArr));
+
+                        $.ajax({
+                            url:"marcarSalida",
+                            type:"POST",
+                            data:formdata,
+                            dataType:"html",
+                            cache:false,
+                            contentType:false,
+                            processData:false
+                        }).done(function (res) {
+                            tabla.dataSource.read();
+                        }).error(function (err) {
+                            alert(false)
+                        })
+                    }
+                });
+            }else{
+                swal("SELECCIONE UN DATO");
+            }
+        });
     });
 </script>
 @endsection

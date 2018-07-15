@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 	use App\Asistencias;
+    use App\Configuracion;
     use App\Empleado;
     use Session;
 	//use Request;
@@ -398,8 +399,33 @@
 
             foreach($items as $i){
                 $asistencia = Asistencias::find($i->id);
-                $asistencia->h_inicio = Carbon::now()->format('h:i:s');
-                $asistencia->save();
+                if(count($asistencia->h_inicio) == 0){
+                    $asistencia->h_inicio = Carbon::now()->format('H:i:s');
+                    $asistencia->save();
+                }
+
+            }
+            return response()->json(true);
+        }
+
+        public function marcarSalida(Request $request){
+            $items = json_decode($request->get("items"));
+            $config = Configuracion::first();
+            $horaSalida = $config->hora_salida;
+            $horaActual = Carbon::now()->format('H:i:s');
+
+            foreach($items as $i){
+                $asistencia = Asistencias::find($i->id);
+
+                if(count($asistencia->h_fin) == 0){
+                    if($horaActual > $horaSalida){
+                        echo $horaActual - $horaSalida;
+                        abort(500);
+                    }
+                    $asistencia->h_fin = $horaActual;
+                    $asistencia->save();
+                }
+
             }
             return response()->json(true);
         }
