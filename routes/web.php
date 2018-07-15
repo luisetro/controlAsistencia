@@ -19,3 +19,5 @@ Route::get('admin/control-asistencia','AdminAsistenciaController@getControlAsist
 Route::get('admin/empleados','AdminAsistenciaController@empleados');
 Route::post('admin/marcarEntrada','AdminAsistenciaController@marcarEntrada');
 Route::post('admin/marcarSalida','AdminAsistenciaController@marcarSalida');
+
+Route::resource('admin/reportes','ReporteController');
