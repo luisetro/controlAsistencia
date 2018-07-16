@@ -158,7 +158,8 @@
             $this->script_js = "
               $(function() {
                  $('#calendar').fullCalendar({
-                 locale:'es'
+                    locale:'es',
+                    height: 500
                  });
                  
                  $('.fc-day').click(function(){

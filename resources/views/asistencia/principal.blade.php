@@ -9,5 +9,5 @@
             color:white;
         }
     </style>
-    <div id="calendar"></div>
+    <div id="calendar" style="background-color:lightskyblue;display: inline-block;"></div>
 @endsection
